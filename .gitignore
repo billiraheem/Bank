@@ -1,0 +1,22 @@
+# Go
+/bin/
+/pkg/
+*.exe
+*.test
+*.out
+
+# Environment
+.env
+
+# Database
+*.db
+
+# SQLC generated (optional – decide if you want to commit)
+# internal/db/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
