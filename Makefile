@@ -22,4 +22,10 @@ test:
 db_shell:
 	docker exec -it postgres12 psql -U root simple_bank
 
-.PHONY: postgres createdb dropdb migrateup migratedown sqlc test db_shell
+server:
+	go run main.go
+
+mock:
+	mockgen -package mockdb -destination db/mock/store.go github.com/billiraheem/Bank/db/sqlc Store
+
+.PHONY: postgres createdb dropdb migrateup migratedown sqlc test db_shell server mock
